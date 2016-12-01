@@ -1,0 +1,29 @@
+ <aside data-ng-include src="'template/header.html'"></aside>
+<div class="container">
+    <div class="page-header">
+
+  <h3>MAPA - PEDIDOS</h3>
+
+
+	<ng-map center="current-location" zoom="15">
+
+		<!-- <marker ng-if="mapData.nombre != 'clear'" position="[{{mapData.latitud}}, {{mapData.longitud}}]" 
+		icon="{{mapData.avatar}}"
+		title="{{mapData.nombre}} {{mapData.apellido}}"></marker> -->
+ 
+ 		<marker ng-repeat="pedidos in ListadoProductos" 
+ 		position="{{pedidos.direccion}}" 
+ 		icon="fotos/pizzaIcon.png"
+ 		 title="{{pedidos.nombre}}"></marker>
+
+    <marker ng-repeat="sucursal in ListadoSucursales" 
+    position="{{sucursal.direccion}}" 
+    icon="fotos/sucursal.png"
+     title="{{sucursal.nomSucursal}}"></marker>
+
+	</ng-map>
+
+</div>
+  
+
+</div>

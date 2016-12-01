@@ -1,0 +1,17 @@
+<aside data-ng-include src="'template/header.html'"></aside>
+<div class="container">
+  <div class="page-header">
+    <center> <h1> {{DatoTest}}</h1>   </center>     
+  </div>
+  <div class="main">
+    <div class="row placeholders" >
+     <div ng-repeat="value in listado">
+     <div class="col-xs-6 col-sm-3 placeholder">
+      <img ng-src="./fotos/{{value.foto}}" ui-sref="carta({id_local:value.id_local})" class="img-responsive" alt="Generic placeholder thumbnail">
+      <h4>{{value.nomSucursal}}</h4>
+      <span class="letraSucursal" >{{value.direccion}}</span>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

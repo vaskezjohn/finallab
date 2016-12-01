@@ -1,0 +1,73 @@
+ <aside data-ng-include src="'template/header.html'"></aside>
+
+<div class="container">
+		<div class="page-header">
+			<center> <h1> {{DatoTest}}</h1>   </center>     
+		</div>
+		<div class="CajaInicio animated bounceInRight">
+			<div class="panel panel-primary">
+			    <div class="panel-body">
+
+			      <form class="form-horizontal"  enctype="multipart/form-data" >
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3">Nombre Sucursal:</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" placeholder="sucursal" ng-model="local.sucursal" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3">Direccion:</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" placeholder="Nombre" ng-model="local.direccion" required>
+                        </div>
+                    </div>
+
+          
+			        <input  class="control-label col-xs-3"  type="file" nv-file-select uploader="uploader"/>
+					<li  class="control-label col-xs-3" ng-repeat="item in uploader.queue" >
+
+						Archivo: <span  class="control-label col-xs-3" ng-bind="item.file.name"></span><br/>
+						<!-- imagen del archivo -->
+						<div  class="control-label col-xs-3" ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+
+						<!-- boton cancel -->            
+						<button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+							<span class="glyphicon glyphicon-ban-circle"></span> Cancel
+						</button>
+
+						<!-- boton remove -->
+						<button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+							<span class="glyphicon glyphicon-trash"></span> Remove
+						</button>
+					</li>  
+
+					<img   ng-src="fotos/{{local.foto}}" class="fotoform" id="foto" ng-model="local.foto"/>
+					<p style="  color: black;">*La foto se actualiza al guardar.</p>
+
+                       <br><br>
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-9">
+                            <input type="submit" class="btn btn-primary"  ng-click="Guardar()" value="Guardar">
+                            <input type="reset" class="btn btn-default" value="Limpiar">
+                        </div>
+                    </div>
+
+			        <input type="hidden" value="" id="idParaModificar" name="agregar" ng-model="local.id"/>
+					<input type="hidden" value="" id="hdnAgregar" name="agregar" />
+
+			      </form>
+
+			    </div>
+			  </div>
+
+			</form>
+	</div>
+
+<div class="container">
+
+<form class="form-horizontal">
+
+</form>
+</div>

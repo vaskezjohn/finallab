@@ -1,0 +1,50 @@
+ <aside data-ng-include src="'template/header.html'"></aside>
+
+ <div class="container">
+ 	<div class="page-header">
+ 		<center><h1>PIZZERIA "EL BUEN COMER"</h1> </center>     
+ 		<center><h1>ELIJA UNA OPCIÓN</h1> </center>  
+ 	</div>
+
+ 	<div  class="CajaInicio animated bounceInRight">
+ 		<div class="list-group">
+ 			<a ng-if="altaPro" ui-sref="alta" class="list-group-item active">
+ 				<span class="glyphicon glyphicon-plus"></span> Alta de Productos 
+ 			</a>
+ 			<a ng-if="listPro"  ui-sref="grillaPro" class="list-group-item">
+ 				<span class="glyphicon glyphicon-th-list"></span> Listado de Productos
+ 			</a>
+ 			<a ui-sref="pedidos" class="list-group-item">
+ 				<span class="glyphicon glyphicon-th-list"></span> Listado de Pedidos
+ 			</a>
+ 			<a ng-if="listUser" ui-sref="grillaUsers"class="list-group-item">
+ 				<span class="glyphicon glyphicon-user"></span> Listado de Usuarios
+ 			</a>
+ 			<button ng-if="listClie" ui-sref="grillaClientes" class="list-group-item">
+ 				<span class="glyphicon glyphicon-cog"></span>Lista Clientes</h4>
+ 			</button>
+ 			<a ng-if="report" ui-sref="reportes" class="list-group-item">
+ 				<span class="glyphicon glyphicon-list-alt"></span> Generar Reporte 
+ 			</a>
+ 			<button ng-if="altaCliente" ng-click="crearCuenta()" class="list-group-item">
+ 				<span class="glyphicon glyphicon-cog"></span> Alta Clientes</h4>
+ 				<button ng-if="altaPersonal"  ui-sref="altaPersonal" class="list-group-item">
+ 					<span class="glyphicon glyphicon-cog"></span> Alta Personal</h4>
+ 				</button>
+
+ 				<button ng-if="altaLocal" ui-sref="altaLocal" class="list-group-item">
+ 					<span class="glyphicon glyphicon-cog"></span> Nuevo Local</h4>
+ 				</button>
+ 				<button ng-click="Logout()" class="list-group-item">
+ 					<span class="glyphicon glyphicon-cog"></span> Cerrar Sesión</h4>
+ 				</button>
+
+
+ 			
+
+
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+

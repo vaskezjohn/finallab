@@ -1,0 +1,57 @@
+ <aside data-ng-include src="'template/header.html'"></aside>
+	  <div class="container">
+		<div class="page-header">
+			<center><h1>LISTA DE PEDIDOS</h1> </center>     
+		</div>
+	  	 
+		           
+					<div class="table table-responsive">
+								<input class="form-control" type="search" ng-model="buscador" placeholder="Buscar Pedido">							<!-- id="listaPersonas" -->
+								
+								<table class='table table-hover table-responsive' id="listamascota">
+									<thead>
+										<tr>
+																										
+											<th><font color="black">  tipo   </th>
+											<th><font color="black">  Ingredientes </th>
+											<th><font color="black">  Prècio     </th>
+											<th><font color="black">  Cantidad </th>
+											<th><font color="black">  Cliente </th>
+											<th><font color="black">  BORRAR     </th>
+											
+										</tr> 
+									</thead>
+									<tr ng-repeat="pedido in ListadoProductos | filter:buscador as resultado">
+
+										
+							            <td><font color="black">{{pedido.tipo}}</td>
+										<td><font color="black">{{pedido.ingredientes}}</td>
+										<td><font color="black">{{pedido.precio}}</td>
+										<td><font color="black">{{pedido.cantidad}}</td>
+										<td><font color="black">{{pedido.nombre}}</td>
+
+										<td><button class='btn btn-danger' name='Borrar' ng-click="Borrar(pedido)">   <span class='glyphicon glyphicon-remove-circle'>&nbsp;</span>Borrar</button></td>
+										
+											
+									</tr>
+									<!--tr ng-if="resultado.length==0">
+
+										<td></td>
+							
+										<td>No hay personas con ese criterio</td>
+										<td></td>
+										<td></td>
+
+										<td></td>
+										
+										<td></td>
+															
+									</tr-->
+								</table>
+								<div ng-if="resultado.length==0">
+									No hay pizzas con ese critero.
+								</div>
+							</div>
+							
+						</div>
+		</div>

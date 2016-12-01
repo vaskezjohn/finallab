@@ -1,0 +1,51 @@
+<aside data-ng-include src="'template/header.html'"></aside>
+
+<div class="container">
+	<div class="page-header">
+		<center><h1>ESPECIALIDADES DE LA CASA</h1> </center>     
+	</div>
+	<!-- <img src="../fotos/fondo-pizza.jpg" class="img-responsive" >  -->
+	
+	<div class="table table-responsive">
+		<input class="form-control" type="search" ng-model="buscador" placeholder="Buscar Pizza">							<!-- id="listaPersonas" -->
+		
+		<table class='table table-hover table-responsive' id="listamascota">
+			<thead>
+				<tr>
+					<th ><font color="black"> Foto   </th>									
+					<th><font color="black">  tipo   </th>
+					<th><font color="black">  Ingredientes </th>
+					<th><font color="black">  Prècio     </th>
+					<th><font color="black">  Cantidad     </th>
+					
+				</tr> 
+			</thead>
+			<tr ng-repeat="producto in ListadoProductos | filter:buscador as resultado">
+
+				<td><img  class='fotoGrilla' ng-src="fotos/{{producto.foto}}" /></td>
+				<td><font color="black">{{producto.tipo}}</td>
+				<td><font color="black">{{producto.ingredientes}}</td>
+				<td><font color="black">{{producto.precio}}</td>
+				{{producto.nombre}}
+				<td><font color="black"><input class="form-control" type="number" min="0"  ng-model="producto.cantidad"><!-- <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span> --></td>
+				
+				
+
+			</tr>
+			
+		</table>
+		<div ng-if="resultado.length==0">
+			<td>No hay pizzas con ese critero.</td>
+			<td></td>
+			<td></td>
+
+			<td></td>
+			
+		</div>
+	</br>
+	<button name="guardarPedido" class="btn btn-success btn-block" ng-click="guardarPedido(ListadoProductos)"><span class=" glyphicon glyphicon-shopping-cart">&nbsp;</span> Confirmar Pedido
+	</button>
+</div>
+
+</div>
+

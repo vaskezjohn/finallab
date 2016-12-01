@@ -1,0 +1,8 @@
+angular.module('TpPizzeria').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('template/header.html',
+    "<div ng-app='TpPizzeria' ng-controller='controlMenu' class='navbar-wrapper'> <div class='container'> <nav class='navbar navbar-inverse navbar-static-top'> <div class='container'> <div class='navbar-header'> <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'> <span class='sr-only'>Toggle navigation</span> <span class='icon-bar'></span> <span class='icon-bar'></span> <span class='icon-bar'></span> </button> <a class='navbar-brand' href='#'><span class='glyphicon glyphicon-star' >&nbsp;</span>Pizzeria 'El Buen Comer'   <span class='glyphicon glyphicon-star' >&nbsp;</span></a> </div> <div id='navbar' class='navbar-collapse collapse'> <ul class='nav navbar-nav'> <li  class='active'><a ui-sref='menu'><span class='glyphicon glyphicon-hand-up'>&nbsp;</span>Inicio</a></li> <li ng-if='altaPro'><a  ui-sref='alta'><span class='glyphicon glyphicon-cutlery' >&nbsp;</span>Alta Producto</a></li> <li ng-if='listaPro'><a ui-sref='grillaPro'><span class='glyphicon glyphicon-th' >&nbsp;</span>Grilla</a></li> <li><a ui-sref='listaSucursales'><span class=' glyphicon glyphicon-shopping-cart'>&nbsp;</span>Menú</a></li> <li ng-if='estadistica' ><a ui-sref='estadistica'><span class='glyphicon glyphicon-stats' >&nbsp;</span>Estadística</a></li> <li ng-if='mapa'><a ui-sref='mapa'><span class='glyphicon glyphicon-globe' >&nbsp;</span>Google Maps</a></li> <li class='nav navbar-nav navbar-right'>{{usuario.nombre}}</li> </ul> </div> </div> </nav> </div> </div>"
+  );
+
+}]);

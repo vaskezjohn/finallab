@@ -1,0 +1,59 @@
+ <aside data-ng-include src="'template/header.html'"></aside>
+
+ <div class="container">
+    <div class="page-header">
+      <center> <h1> {{DatoTest}}</h1>   </center>     
+    </div>
+    <div class="CajaInicio animated bounceInRight">
+      <div class="panel panel-primary">
+          <div class="panel-body">
+
+  <form id="FormIngreso" class="form-horizontal" name="FormIngreso" enctype="multipart/form-data">
+
+     
+          <label for="nombre" class="tituloLabel">Nombre:</label>
+          <input type="text" class="form-control"  id="nombre" name="nombre" ng-model="personal.nombre" placeholder="ingrese nombre" required />
+          <span style="color:#FF0000;float:right;font-size:18" ng-show='FormIngreso.nombre.$error.required'>* El nombre es requerido</span>
+          
+
+          <br><label for="apellido" class="tituloLabel">Apellido:</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" ng-model="personal.apellido" placeholder="ingrese Apellido" required />
+           <span style="color:#FF0000;float:right;font-size:18" ng-show='FormIngreso.apellido.$error.required'>* El apellido es requerido</span>
+
+
+          <br><label for="local" class="tituloLabel">Local Asignado:</label>
+            <select class="form-control" id="local" value="Seleccione Sucursal" name="local" ng-model="personal.id_local" >
+            <option ng-repeat="value in locales" value="{{value.id_local}}">{{value.nomSucursal}}</option>
+            </select>
+
+
+  
+            <br><label for="tipo" class="tituloLabel">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" ng-model="personal.tipo">
+                <option select value="emple">Empleado</option>
+                <option ng-if="enca" value="enca">Encargado</option>
+                <option ng-if="enca" value="admin">Administrador</option>
+            </select>
+
+
+          <br><label for="email" class="tituloLabel">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" ng-model="personal.correo" placeholder="ingrese email" required />
+           <span style="color:#FF0000;float:right;font-size:18" ng-show='FormIngreso.apellido.$error.required'>* El email es requerido</span>
+
+            
+          <br><label for="password1" class="tituloLabel">Password:</label>
+          <input class="form-control" type="password" id="clave1" name="clave1" ng-model="personal.clave" style="color:#000;" placeholder="Ingrese clave" required>
+          <span id="lblClave1" style="color:#FF0000;float:right;font-size:18" ng-show='FormIngreso.clave1.$error.required'>* La clave es requerida</span>
+
+           <br><label for="password2" class="tituloLabel">Confirmar Password:</label>
+          <input class="form-control" type="password" id="clave2" name="clave2" ng-model="personal.copiaclave" style="color:#000;" placeholder="Reingrese clave" required>
+          <span id="lblClave2" style="color:#FF0000;float:right;font-size:18" ng-show='FormIngreso.clave2.$error.required'>* La clave es requerida</span>
+          <span style="color:#FF0000;float:right;font-size:18;margin-left:200" ng-show='personal.password != personal.copiapassword'>* Las claves no coinciden</span>
+
+         <br><button class="btn btn-lg btn-primary btn-block"  ng-disabled="FormIngreso.$invalid || personal.password != personal.copiapassword || personal.tipo == 'invalido'"  name="guardar" ng-click="Guardar()">Registrar Nuevo Empleado</button>
+
+  </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+
+<div class="container">
+    
+
+ <div class="CajaInicio animated bounceInRight">
+
+  <div class="login-panel panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Iniciar Sesión</h3>
+    </div>
+    <div class="panel-body">
+
+      <form class="form-signin"  enctype="multipart/form-data" >
+
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" ng-model="correo" required autofocus>
+
+        <br><label for="nombre" class="sr-only">Nombre</label>
+        <input type="text" id="nombre" class="form-control" placeholder="Nombre"  ng-model="nombre" required autofocus>
+
+        <br><label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password"  ng-model="clave" required>
+
+        <br><button class="btn btn-lg btn-primary btn-block" ng-click="Login()" type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Iniciar Sesión</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="LoginAdmin()" type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Sesión Admin</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="LoginEnca()" type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Sesión Encargado</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="LoginEmple()" type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Sesión Empleado</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="LoginCliente()" type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Sesión Cliente</button>
+         <button class="btn btn-lg btn-primary btn-block" ui-sref='altaUser' type="submit"><span class="glyphicon glyphicon-user">&nbsp;</span>Crear Cuenta</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+ </div>

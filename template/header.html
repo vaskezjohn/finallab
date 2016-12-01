@@ -1,0 +1,40 @@
+<ul class="nav navbar-inverse navbar-static-top" ng-app='TpPizzeria' ng-controller='controlMenu'>
+   <li><a class='navbar-brand' href='#'>Pizzerías Argenta SRL</a> </div></li>
+
+   <li><a href="">Inicio</a></li>
+   <li ng-if='altaPro'><a href="">Productos</a>
+      <ul>
+         <li ng-if='altaPro'><a ui-sref='alta'>Alta Producto</a></li>
+         <li ng-if='listaPro'><a ui-sref='grillaPro'>Lista Productos</a></li>
+      </ul>
+   </li>
+   <li ng-if="altaPersonal"><a href="">Personal</a>
+      <ul>
+         <li ng-if="altaPersonal"><a ui-sref="altaPersonal">Alta Personal</a></li>
+         <li ng-if="listUser"><a ui-sref="grillaUsers">Lista Usuarios</a></li>
+      </ul>
+   </li>
+   <li ng-if="altaCliente"><a href="">Clientes</a>
+      <ul>
+         <li ng-if="altaCliente"><button  ng-click="crearCuenta()" class="list-group-item">Alta Clientes</li>
+         <li ng-if="listClie"><a ui-sref="grillaClientes">Lista Cliente</a></li>
+      </ul>
+   </li>
+    <li ng-if="altaLocal"><a href="">Administrador</a>
+      <ul>
+         <li ng-if="altaLocal"><a ui-sref="altaLocal">Nuevo Local</a></li>
+         <li ng-if="report"><a ui-sref="reportes">Reportes</a></li>
+         <li ng-if='estadistica' ><a ui-sref='estadistica'>Estadsitica</a></li>
+         <li ng-if='mapa'><a ui-sref='mapa'>Mapa</a></li>
+      </ul>
+   </li> 
+    <li><a  ui-sref="pedidos">Listado Pedidos</a></li>
+    <li><a ui-sref="listaSucursales">Realizar Pedido</a></li>
+   <li><button ng-click="Logout()" class="list-group-item">
+      <span class="glyphicon glyphicon-cog"></span> Cerrar Sesión</h4>
+   </button></li>
+   <li>{{usuario.nombre}}</li>
+</ul>
+
+
+
